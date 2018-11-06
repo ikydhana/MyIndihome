@@ -132,26 +132,22 @@ public class TambahPelangganFrame extends JFrame{
                     PreparedStatement ps;
                     if (status== SEDANG_TAMBAH){
                         String executeQuery = "insert into tb_pelanggan "+
-                                " (id_pelanggan,nama_pelanggan,paket,alamat_email,no_aktif,no_alternatif) value (?,?,?,?,?,?,?)";;
+                                "(nama_pelanggan,paket,alamat_email,no_aktif,no_alternatif) value (?,?,?,?,?)";
                         ps = (PreparedStatement) con.prepareStatement(executeQuery);
-                        ps.setString(1, eid_pelanggan.getText());
-                        ps.setString(2, enama_pelanggan.getText());
-                        ps.setString(3, (String) cbjp.getSelectedItem());
-                        ps.setString(4, ealamat_email.getText());
-                        ps.setString(5, eno_aktif.getText());
-                        ps.setString(6, eno_alternatif.getText());
+                        ps.setString(1, enama_pelanggan.getText());
+                        ps.setString(2, (String) cbjp.getSelectedItem());
+                        ps.setString(3, ealamat_email.getText());
+                        ps.setString(4, eno_aktif.getText());
+                        ps.setString(5, eno_alternatif.getText());
                         }
                     else {
-                        String executeQuery = "update tb_pelanggan set"
-                                +"id_pelanggan=?,nama_pelanggan=?,paket=?,alamat_email=?,no_aktif=?,no_alternatif=? where id_pelanggan =?";
+                        String executeQuery = "update * from tb_pelanggan set"
+                                +"nama_pelanggan=?,no_aktif=?,no_alternatif=? where nama_pelanggan=?";
                         ps= (PreparedStatement) con.prepareStatement(executeQuery);
                        
-                        ps.setString(1, eid_pelanggan.getText());
-                        ps.setString(2, enama_pelanggan.getText());
-                        ps.setString(3, (String) cbjp.getSelectedItem());
-                        ps.setString(4, ealamat_email.getText());
-                        ps.setString(5, eno_aktif.getText());
-                        ps.setString(6, eno_alternatif.getText());
+                        ps.setString(1, enama_pelanggan.getText());
+                        ps.setString(2, eno_aktif.getText());
+                        ps.setString(3, eno_alternatif.getText());
                        
                         
                         

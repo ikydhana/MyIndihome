@@ -167,7 +167,7 @@ return pelangganList;
                           TableModel model =tPelanggan.getModel();
                           Koneksi koneksi = new Koneksi();
                           Connection con = koneksi.getConnection();
-                          String executeQuery = "delete from tb_pelanggan where id_pelanggan = ?";
+                          String executeQuery = "delete from tb_pelanggan where nama_pelanggan = ?";
                           PreparedStatement ps = con.prepareStatement(executeQuery);
                           ps.setString (1, model.getValueAt(i, 1).toString());
                           ps.executeUpdate();
@@ -207,12 +207,9 @@ return pelangganList;
                 if (i>=0){
                     TableModel model = tPelanggan.getModel();
                     pelanggan = new Pelanggan();
-                    pelanggan.setId_pelanggan(Integer.parseInt(model.getValueAt(i,0).toString() ));
                     pelanggan.setNama_pelanggan(model.getValueAt(i, 1).toString());
-                    pelanggan.setPaket(model.getValueAt(i, 3).toString());
-                    pelanggan.setAlamat_email(model.getValueAt(i, 4).toString());
-                    pelanggan.setNo_aktif(model.getValueAt(i, 5).toString());
-                    pelanggan.setNo_alternatif(model.getValueAt(i, 6).toString());
+                    pelanggan.setNo_aktif(model.getValueAt(i, 4).toString());
+                    pelanggan.setNo_alternatif(model.getValueAt(i, 5).toString());
                     
                     
                     TambahPelangganFrame tambahPelangganFrame = new TambahPelangganFrame(pelanggan);
@@ -226,7 +223,4 @@ return pelangganList;
     
     
      }
-     
-
-
 }
