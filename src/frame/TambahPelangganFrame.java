@@ -141,8 +141,7 @@ public class TambahPelangganFrame extends JFrame{
                         ps.setString(5, eno_alternatif.getText());
                         }
                     else {
-                        String executeQuery = "update * from tb_pelanggan set"
-                                +"nama_pelanggan=?,no_aktif=?,no_alternatif=? where nama_pelanggan=?";
+                        String executeQuery = "update * from tb_pelanggan set nama_pelanggan=?,no_aktif=?,no_alternatif=? where nama_pelanggan=?";
                         ps= (PreparedStatement) con.prepareStatement(executeQuery);
                        
                         ps.setString(1, enama_pelanggan.getText());
