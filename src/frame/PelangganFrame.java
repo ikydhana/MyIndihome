@@ -36,7 +36,7 @@ public class PelangganFrame extends JFrame{
     JButton bUbah =new JButton("Ubah");
     JButton bHapus =new JButton("Hapus");
     JButton bBatal =new JButton("Batal");
-    JButton bKeluar =new JButton("Keluar");
+    JButton bKeluar =new JButton("Exit");
  
  
  Pelanggan pelanggan;
@@ -207,7 +207,9 @@ return pelangganList;
                 if (i>=0){
                     TableModel model = tPelanggan.getModel();
                     pelanggan = new Pelanggan();
+                    pelanggan.setId_pelanggan(Integer.parseInt (model.getValueAt(i, 0).toString()));
                     pelanggan.setNama_pelanggan(model.getValueAt(i, 1).toString());
+                    pelanggan.setAlamat_email(model.getValueAt(i, 3).toString());
                     pelanggan.setNo_aktif(model.getValueAt(i, 4).toString());
                     pelanggan.setNo_alternatif(model.getValueAt(i, 5).toString());
                     
